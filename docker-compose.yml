@@ -1,0 +1,25 @@
+version: "3.8"
+networks:
+  default:
+    name: pulling_proxy
+services:
+  slow-server:
+    build: .
+    volumes:
+      - .:/app
+    command:
+      - rake
+      - slow_server
+  pulling-proxy:
+    build: .
+    depends_on:
+      - slow-server
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    environment:
+      SLOW_SERVER_URL: http://slow-server:4000
+    command:
+      - rake
+      - pulling_proxy
