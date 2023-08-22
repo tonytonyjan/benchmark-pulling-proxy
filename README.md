@@ -11,6 +11,10 @@ It starts 2 servers:
 1. slow response server - with 20-second response time.
 2. polling proxy - forwrad reqeust to slow response server and respond instantly with the the format in `{"state":"pending"}` or `{"state":"done"}`.
 
+## Sequence Diagram
+
+![](https://www.plantuml.com/plantuml/svg/jP8nQWCn44LxdMAOAW6dSAl26DO742Xz65iJ8w986sbinmJVFTAon5xOPelKy_xNuwDj4Sfo-WoA3f8oT405qAGGV3n25pn7GTLNnXzyJr70J0YJq_SLbIEXFHM6tN1zfV81jlRHaQTfEznjI1UmdC-SKQaENZPWDFoWrDoRTwZNj-RZpoGCHfa6x3HSiXT-6Y4DwnLKUs4Ds7DqLGUVxx6ToYod78Vq1go6p5ydBd97RBlLwgwzFLIX_gkwASTtXmMMcSazICuepJwtnCKsTB39NFeK2yC-kQi6V4y97s6xR4UN8kCAUhg6H6xicnjrulC_qumoECgWRZBpEysJKyajHrV_-Iy0)
+
 ## Usage
 
 ```sh
