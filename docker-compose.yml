@@ -1,7 +1,7 @@
 version: "3.8"
 networks:
   default:
-    name: pulling_proxy
+    name: polling_proxy
 services:
   slow-server:
     build: .
@@ -10,7 +10,7 @@ services:
     command:
       - rake
       - slow_server
-  pulling-proxy:
+  polling-proxy:
     build: .
     depends_on:
       - slow-server
@@ -22,4 +22,4 @@ services:
       SLOW_SERVER_URL: http://slow-server:4000
     command:
       - rake
-      - pulling_proxy
+      - polling_proxy

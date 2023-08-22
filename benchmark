@@ -1,5 +1,5 @@
 #!/bin/sh
 set -auxo pipefail
-docker run --pull always --rm --network pulling_proxy \
+docker run --pull always --rm --network polling_proxy \
   -w /app -v $(pwd)/wrk.lua:/app/wrk.lua alpine \
-  sh -c 'apk add wrk && wrk -t $(nproc) -c 10000 -d 30s -s wrk.lua "http://pulling-proxy:3000"'
+  sh -c 'apk add wrk && wrk -t $(nproc) -c 10000 -d 30s -s wrk.lua "http://polling-proxy:3000"'

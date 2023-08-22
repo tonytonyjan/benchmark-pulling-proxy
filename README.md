@@ -1,4 +1,4 @@
-This project aims to benchmark how a pulling proxy server perform when forwarding reqeusts to another slow response server using IO multiplexing architecture.
+This project aims to benchmark how a polling proxy server perform when forwarding reqeusts to another slow response server using IO multiplexing architecture.
 
 ## Start Server
 
@@ -9,7 +9,7 @@ docker-compose up --build
 It starts 2 servers:
 
 1. slow response server - with 20-second response time.
-2. pulling proxy - forwrad reqeust to slow response server and respond instantly with the the format in `{"state":"pending"}` or `{"state":"done"}`.
+2. polling proxy - forwrad reqeust to slow response server and respond instantly with the the format in `{"state":"pending"}` or `{"state":"done"}`.
 
 ## Usage
 
@@ -42,7 +42,7 @@ Run the following command to benchmark:
 example output:
 
 ```
-Running 10s test @ http://pulling-proxy:3000
+Running 10s test @ http://polling-proxy:3000
   8 threads and 10000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency   280.47ms  117.21ms   1.70s    92.09%
